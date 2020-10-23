@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+body {
+  background: #fafafa;
+}
+
+header nav {
+  -webkit-box-shadow: 0px 2px 5px 0px rgba(180, 180, 180, 0.4);
+  box-shadow: 0px 2px 5px 0px rgba(180, 180, 180, 0.4);
+  background: #ffffff;
+  position: relative;
+}
+
+header nav .container {
+  width: 1196px;
+  max-width: 90%;
+  margin: 0 auto;
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 100;
+}
+
+header nav .container h1 {
+  font-weight: 700;
+}
+
+header nav .container .dark-mode-btn {
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+header nav .container .dark-mode-btn i {
+  margin-right: 5px;
+}
+
+main .container {
+  width: 1196px;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+main .container .search {
+  margin-top: 3rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 3rem;
+  border-radius: 5px;
+  background: #ffffff;
+  -webkit-box-shadow: 0px 2px 5px 0px rgba(180, 180, 180, 0.4);
+  box-shadow: 0px 2px 5px 0px rgba(180, 180, 180, 0.4);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .container .search label {
+  margin: 0 24px;
+}
+
+main .container .search label i {
+  color: #858585;
+}
+
+main .container .search input {
+  border: none;
+  width: 300px;
+  height: 100%;
+  outline: none;
+}
+
+main .container .search input::-webkit-input-placeholder {
+  color: #858585;
+  font-weight: 600;
+}
+
+main .container .search input:-ms-input-placeholder {
+  color: #858585;
+  font-weight: 600;
+}
+
+main .container .search input::-ms-input-placeholder {
+  color: #858585;
+  font-weight: 600;
+}
+
+main .container .search input::placeholder {
+  color: #858585;
+  font-weight: 600;
+}
+/*# sourceMappingURL=style.css.map */
