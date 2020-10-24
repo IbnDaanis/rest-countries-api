@@ -19,10 +19,10 @@ header nav {
 }
 
 header nav .container {
-  width: 1196px;
+  width: 1280px;
   max-width: 90%;
   margin: 0 auto;
-  height: 100px;
+  height: 80px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -49,22 +49,23 @@ header nav .container .dark-mode-btn {
 }
 
 header nav .container .dark-mode-btn i {
-  margin-right: 5px;
+  margin-right: 8px;
 }
 
 main .container {
-  width: 1196px;
+  width: 1280px;
   max-width: 90%;
   margin: 0 auto;
 }
 
 main .container .search {
   margin-top: 3rem;
+  margin-bottom: 3.1rem;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  height: 3rem;
-  border-radius: 5px;
+  height: 3.4rem;
+  border-radius: 10px;
   background: #ffffff;
   -webkit-box-shadow: 0px 2px 5px 0px rgba(180, 180, 180, 0.4);
   box-shadow: 0px 2px 5px 0px rgba(180, 180, 180, 0.4);
@@ -86,28 +87,96 @@ main .container .search label i {
 
 main .container .search input {
   border: none;
-  width: 300px;
+  width: 420px;
   height: 100%;
   outline: none;
 }
 
 main .container .search input::-webkit-input-placeholder {
   color: #858585;
-  font-weight: 600;
+  font-weight: 300;
 }
 
 main .container .search input:-ms-input-placeholder {
   color: #858585;
-  font-weight: 600;
+  font-weight: 300;
 }
 
 main .container .search input::-ms-input-placeholder {
   color: #858585;
-  font-weight: 600;
+  font-weight: 300;
 }
 
 main .container .search input::placeholder {
   color: #858585;
+  font-weight: 300;
+}
+
+main .container .countries {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (16.5rem)[4];
+      grid-template-columns: repeat(4, 16.5rem);
+  grid-row-gap: 70px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media (max-width: 1000px) {
+  main .container .countries {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}
+
+main .container .countries .card {
+  height: 340px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 2px 5px 0px rgba(180, 180, 180, 0.4);
+  box-shadow: 0px 2px 5px 0px rgba(180, 180, 180, 0.4);
+}
+
+main .container .countries .card .flag {
+  border-radius: 5px 5px 0 0;
+  height: 160px;
+  width: 100%;
+  background: teal;
+}
+
+main .container .countries .card .info {
+  background: white;
+  height: 180px;
+  border-radius: 0 0 5px 5px;
+  padding: 1.5rem;
+}
+
+main .container .countries .card .info .country-name {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+main .container .countries .card .info .facts {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 66px;
+}
+
+main .container .countries .card .info .facts li {
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+
+main .container .countries .card .info .facts li span {
   font-weight: 600;
 }
 /*# sourceMappingURL=style.css.map */
