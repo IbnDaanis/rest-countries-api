@@ -5,32 +5,64 @@ darkButton.addEventListener('click', e => {
   darkButtonIcon.classList.toggle('fas')
 })
 const countries = document.querySelector('.countries')
+const countryList = localStorage.getItem('countryList') ? JSON.parse(localStorage.getItem('countryList')) : []
+
+
+function displayCountries() {
+  countryList.forEach(country => {
+    const card = document.createElement('div')
+    card.classList.add('card')
+    const flag = document.createElement('div')
+    card.appendChild(flag)
+    flag.classList.add('flag')
+    const flagImage = document.createElement('img')
+    flag.appendChild(flagImage)
+    flagImage.src = country.flag
+    const info = document.createElement('div')
+    card.appendChild(info)
+    info.classList.add('info')
+    const name = document.createElement('h2')
+    info.appendChild(name)
+    name.classList.add('country-name')
+    name.textContent = country.name
+    const facts = document.createElement('ul')
+    info.appendChild(facts)
+    facts.classList.add('facts')
+    const population = document.createElement('li')
+    facts.appendChild(population)
+    population.innerHTML = `<span>Population: </span>${country.population}`
+    const region = document.createElement('li')
+    facts.appendChild(region)
+    region.innerHTML = `<span>Region: </span>${country.region}`
+    const capital = document.createElement('li')
+    facts.appendChild(capital)
+    capital.innerHTML = `<span>Capital: </span>${country.capital}`
+
+    countries.appendChild(card)
+  })
+}
 
 const getCountries = async () => {
   try {
-    const fetchAPI = await fetch('https://restcountries.eu/rest/v2/all')
-    const data = await fetchAPI.json()
-    console.log(data)
-    data.forEach(country => {
-      const card = `
-      <div class="card">
-            <div class="flag">
-            <img src='${country.flag}'/>
-            </div>
-            <div class="info">
-              <h2 class="country-name">${country.name}</h2>
-              <ul class="facts">
-                <li><span>Population: </span>${country.population}</li>
-                <li><span>Region: </span>${country.region}</li>
-                ${country.capital ? `<li><span>Capital: </span>${country.capital}</li>` : ''} 
-              </ul>
-            </div>
-          </div>
-     `
-      countries.innerHTML += card
-    })
-
-
+    if (!localStorage.getItem('countryList')) {
+      const fetchAPI = await fetch('https://restcountries.eu/rest/v2/all')
+      const data = await fetchAPI.json()
+      // console.log(data)
+      data.forEach(country => {
+        countryList.push({
+          flag: country.flag,
+          name: country.name,
+          population: country.population,
+          region: country.region,
+          capital: country.capital
+        })
+      })
+      // localStorage.setItem('countryList', JSON.stringify(countryList))
+      console.log(countryList)
+      displayCountries()
+    } else {
+      displayCountries()
+    }
   } catch (error) {
     console.error(error)
   }
