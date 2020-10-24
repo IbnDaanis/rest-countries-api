@@ -141,7 +141,14 @@ main .container .countries .card .flag {
   border-radius: 5px 5px 0 0;
   height: 160px;
   width: 100%;
-  background: teal;
+}
+
+main .container .countries .card .flag img {
+  border-radius: 5px 5px 0 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 main .container .countries .card .info {
@@ -165,9 +172,6 @@ main .container .countries .card .info .facts {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   height: 66px;
 }
 

@@ -4,6 +4,7 @@ const darkButtonIcon = document.querySelector('.dark-mode-btn i')
 darkButton.addEventListener('click', e => {
   darkButtonIcon.classList.toggle('fas')
 })
+const countries = document.querySelector('.countries')
 
 const getCountries = async () => {
   try {
@@ -11,22 +12,29 @@ const getCountries = async () => {
     const data = await fetchAPI.json()
     console.log(data)
     data.forEach(country => {
-      const name = document.createElement('div')
-      name.textContent = country.name
-      name.style.display = 'flex'
-      name.style.flexDirection = 'column'
-      name.style.alignItems = 'center'
-
-      const flag = document.createElement('img')
-      flag.src = country.flag
-      flag.style.width = '100px'
-      flag.style.objectFit = 'cover'
-      name.appendChild(flag)
-      main.appendChild(name)
+      const card = `
+      <div class="card">
+            <div class="flag">
+            <img src='${country.flag}'/>
+            </div>
+            <div class="info">
+              <h2 class="country-name">${country.name}</h2>
+              <ul class="facts">
+                <li><span>Population: </span>${country.population}</li>
+                <li><span>Region: </span>${country.region}</li>
+                ${country.capital ? `<li><span>Capital: </span>${country.capital}</li>` : ''} 
+              </ul>
+            </div>
+          </div>
+     `
+      countries.innerHTML += card
     })
+
 
   } catch (error) {
     console.error(error)
   }
 }
+
+getCountries()
 
