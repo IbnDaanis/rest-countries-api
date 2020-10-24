@@ -1,6 +1,9 @@
 const main = document.querySelector('main')
-
-
+const darkButton = document.querySelector('.dark-mode-btn')
+const darkButtonIcon = document.querySelector('.dark-mode-btn i')
+darkButton.addEventListener('click', e => {
+  darkButtonIcon.classList.toggle('fas')
+})
 
 const getCountries = async () => {
   try {
