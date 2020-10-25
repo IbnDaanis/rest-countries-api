@@ -65,15 +65,16 @@ main {
     margin: 0 auto;
 
     .parameters {
+      display: flex;
+      justify-content: space-between;
+
       .search {
         margin-top: 3rem;
         margin-bottom: 3.1rem;
         width: fit-content;
         height: 3.4rem;
-        border-radius: 10px;
+        border-radius: 5px;
         background: $white;
-        -webkit-box-shadow: 0px 2px 5px 0px rgba(180, 180, 180, 0.4);
-        -moz-box-shadow: 0px 2px 5px 0px rgba(180, 180, 180, 0.4);
         box-shadow: 0px 2px 5px 0px rgba(180, 180, 180, 0.4);
         display: flex;
         align-items: center;
@@ -88,9 +89,10 @@ main {
 
         input {
           border: none;
-          width: 420px;
+          width: 320px;
           height: 100%;
           outline: none;
+          border-radius: 5px;
 
           &::placeholder {
             color: $dark-gray;
@@ -99,7 +101,84 @@ main {
         }
       }
 
-      .filter {}
+      .dropdown {
+        position: relative;
+        cursor: pointer;
+        margin-top: 3rem;
+        margin-bottom: 3.1rem;
+
+        .dropdown-toggle {
+          border: none;
+          outline: none;
+          background: none;
+          border-radius: 5px;
+          box-shadow: 0px 2px 5px 0px rgba(180, 180, 180, 0.4);
+          appearance: none;
+          height: 3.4rem;
+          width: 11rem;
+          padding-right: 3.5rem;
+          padding-left: 1rem;
+          position: relative;
+          cursor: pointer;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          font-weight: 300;
+          font-size: 0.9rem;
+          text-align: left;
+
+          &::after {
+            content: '';
+            border-width: 6px;
+            border-radius: 3px;
+            border-style: solid;
+            border-color: transparent;
+            border-top-color: $dark-gray;
+            position: absolute;
+            right: 1rem;
+            top: calc(50% + 3px);
+            transform: translateY(-50%);
+          }
+        }
+
+        .dropdown-toggle.active::after {
+          border-color: transparent;
+          border-bottom-color: $dark-gray;
+          top: calc(50% - 3px);
+        }
+
+        .dropdown-menu {
+          position: absolute;
+          width: 100%;
+          transform: translateY(4px);
+          background: $white;
+          padding-left: 1rem;
+          font-weight: 300;
+          font-size: 0.9rem;
+          box-shadow: 0px 2px 5px 0px rgba(180, 180, 180, 0.4);
+          border-radius: 5px;
+          list-style: none;
+          padding: 5px 0 5px;
+          visibility: hidden;
+
+          &[aria-expanded='true'] {
+            visibility: visible;
+          }
+
+          li {
+            padding: 0.5rem 0 0.5rem 1rem;
+            outline: none;
+
+            &:hover {
+              background: rgb(228, 228, 228)
+            }
+
+            &:focus {
+              background: rgb(214, 214, 214)
+            }
+          }
+        }
+      }
     }
 
     .countries {

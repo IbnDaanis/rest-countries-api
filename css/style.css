@@ -58,6 +58,15 @@ main .container {
   margin: 0 auto;
 }
 
+main .container .parameters {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
 main .container .parameters .search {
   margin-top: 3rem;
   margin-bottom: 3.1rem;
@@ -65,10 +74,10 @@ main .container .parameters .search {
   width: -moz-fit-content;
   width: fit-content;
   height: 3.4rem;
-  border-radius: 10px;
+  border-radius: 5px;
   background: #ffffff;
   -webkit-box-shadow: 0px 2px 5px 0px rgba(180, 180, 180, 0.4);
-  box-shadow: 0px 2px 5px 0px rgba(180, 180, 180, 0.4);
+          box-shadow: 0px 2px 5px 0px rgba(180, 180, 180, 0.4);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -87,9 +96,10 @@ main .container .parameters .search label i {
 
 main .container .parameters .search input {
   border: none;
-  width: 420px;
+  width: 320px;
   height: 100%;
   outline: none;
+  border-radius: 5px;
 }
 
 main .container .parameters .search input::-webkit-input-placeholder {
@@ -110,6 +120,91 @@ main .container .parameters .search input::-ms-input-placeholder {
 main .container .parameters .search input::placeholder {
   color: #858585;
   font-weight: 300;
+}
+
+main .container .parameters .dropdown {
+  position: relative;
+  cursor: pointer;
+  margin-top: 3rem;
+  margin-bottom: 3.1rem;
+}
+
+main .container .parameters .dropdown .dropdown-toggle {
+  border: none;
+  outline: none;
+  background: none;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 2px 5px 0px rgba(180, 180, 180, 0.4);
+          box-shadow: 0px 2px 5px 0px rgba(180, 180, 180, 0.4);
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  height: 3.4rem;
+  width: 11rem;
+  padding-right: 3.5rem;
+  padding-left: 1rem;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 300;
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+main .container .parameters .dropdown .dropdown-toggle::after {
+  content: '';
+  border-width: 6px;
+  border-radius: 3px;
+  border-style: solid;
+  border-color: transparent;
+  border-top-color: #858585;
+  position: absolute;
+  right: 1rem;
+  top: calc(50% + 3px);
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+main .container .parameters .dropdown .dropdown-toggle.active::after {
+  border-color: transparent;
+  border-bottom-color: #858585;
+  top: calc(50% - 3px);
+}
+
+main .container .parameters .dropdown .dropdown-menu {
+  position: absolute;
+  width: 100%;
+  -webkit-transform: translateY(4px);
+          transform: translateY(4px);
+  background: #ffffff;
+  padding-left: 1rem;
+  font-weight: 300;
+  font-size: 0.9rem;
+  -webkit-box-shadow: 0px 2px 5px 0px rgba(180, 180, 180, 0.4);
+          box-shadow: 0px 2px 5px 0px rgba(180, 180, 180, 0.4);
+  border-radius: 5px;
+  list-style: none;
+  padding: 5px 0 5px;
+  visibility: hidden;
+}
+
+main .container .parameters .dropdown .dropdown-menu[aria-expanded='true'] {
+  visibility: visible;
+}
+
+main .container .parameters .dropdown .dropdown-menu li {
+  padding: 0.5rem 0 0.5rem 1rem;
+  outline: none;
+}
+
+main .container .parameters .dropdown .dropdown-menu li:hover {
+  background: #e4e4e4;
+}
+
+main .container .parameters .dropdown .dropdown-menu li:focus {
+  background: #d6d6d6;
 }
 
 main .container .countries {

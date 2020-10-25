@@ -34,7 +34,19 @@
               placeholder="Search for a country..."
             />
           </div>
-          <div class="filter"></div>
+          <div class="dropdown">
+            <button class="dropdown-toggle" type="button" aria-haspopup="true">
+              Filter by Region
+            </button>
+            <ul class="dropdown-menu" role="listbox" aria-expanded="true">
+              <li role="option" tabindex="0">All</li>
+              <li role="option" tabindex="0">Africa</li>
+              <li role="option" tabindex="0">Americas</li>
+              <li role="option" tabindex="0">Asia</li>
+              <li role="option" tabindex="0">Europe</li>
+              <li role="option" tabindex="0">Oceania</li>
+            </ul>
+          </div>
         </div>
         <div class="countries">
           <!-- <div class="card">
