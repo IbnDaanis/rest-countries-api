@@ -4,3 +4,9 @@ $very-dark-blue: #111517; // Light Mode Text
 $dark-gray: #858585; // Light Mode Input
 $very-light-gray: #fafafa; // Light Mode Background
 $white: #ffffff; // Dark Mode Text & Light Mode Elements
+
+.container {
+  width: 1280px;
+  max-width: 90%;
+  margin: 0 auto;
+}

@@ -18,6 +18,9 @@ searchInput.addEventListener('keyup', e => {
   displayCountries(countryList.filter(e => e.name.toLowerCase().includes(searchInput.value.toLowerCase())))
 })
 
+function formatNumber(num) {
+  return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+}
 
 const displayCountries = (theList = countryList) => {
   theList.forEach(country => {
@@ -41,13 +44,13 @@ const displayCountries = (theList = countryList) => {
     facts.classList.add('facts')
     const population = document.createElement('li')
     facts.appendChild(population)
-    population.innerHTML = `<span>Population: </span>${country.population}`
+    population.innerHTML = `<span>Population: </span>${formatNumber(country.population)}`
     const region = document.createElement('li')
     facts.appendChild(region)
-    region.innerHTML = `<span>Region: </span>${country.region}`
+    region.innerHTML = country.region && `<span>Region: </span>${country.region}`
     const capital = document.createElement('li')
     facts.appendChild(capital)
-    capital.innerHTML = `<span>Capital: </span>${country.capital}`
+    capital.innerHTML = country.capital && `<span>Capital: </span>${country.capital}`
 
     countries.appendChild(card)
   })
@@ -58,7 +61,7 @@ const getCountries = async () => {
     if (!localStorage.getItem('countryList')) {
       const fetchAPI = await fetch('https://restcountries.eu/rest/v2/all')
       const data = await fetchAPI.json()
-      // console.log(data)
+      console.log(data)
       data.forEach(country => {
         countryList.push({
           flag: country.flag,
