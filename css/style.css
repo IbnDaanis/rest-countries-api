@@ -129,7 +129,7 @@ main .container .parameters .search input {
 @media (max-width: 1000px) {
   main .container .parameters .search input {
     width: 100%;
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
 }
 
