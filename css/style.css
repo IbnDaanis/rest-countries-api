@@ -39,6 +39,12 @@ header nav .container h1 {
   font-weight: 700;
 }
 
+@media (max-width: 1000px) {
+  header nav .container h1 {
+    font-size: 1.2rem;
+  }
+}
+
 header nav .container .dark-mode-btn {
   border: none;
   outline: none;
@@ -67,6 +73,18 @@ main .container .parameters {
           justify-content: space-between;
 }
 
+@media (max-width: 1000px) {
+  main .container .parameters {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+}
+
 main .container .parameters .search {
   margin-top: 3rem;
   margin-bottom: 3.1rem;
@@ -86,6 +104,12 @@ main .container .parameters .search {
           align-items: center;
 }
 
+@media (max-width: 1000px) {
+  main .container .parameters .search {
+    width: 100%;
+  }
+}
+
 main .container .parameters .search label {
   margin: 0 24px;
 }
@@ -100,6 +124,12 @@ main .container .parameters .search input {
   height: 100%;
   outline: none;
   border-radius: 5px;
+}
+
+@media (max-width: 1000px) {
+  main .container .parameters .search input {
+    width: 100%;
+  }
 }
 
 main .container .parameters .search input::-webkit-input-placeholder {
@@ -129,6 +159,12 @@ main .container .parameters .dropdown {
   margin-bottom: 3.1rem;
 }
 
+@media (max-width: 1000px) {
+  main .container .parameters .dropdown {
+    margin-top: 0;
+  }
+}
+
 main .container .parameters .dropdown .dropdown-toggle {
   border: none;
   outline: none;
@@ -151,6 +187,12 @@ main .container .parameters .dropdown .dropdown-toggle {
   font-weight: 300;
   font-size: 0.9rem;
   text-align: left;
+}
+
+@media (max-width: 1000px) {
+  main .container .parameters .dropdown .dropdown-toggle {
+    width: 15rem;
+  }
 }
 
 main .container .parameters .dropdown .dropdown-toggle::after {
@@ -192,6 +234,12 @@ main .container .parameters .dropdown .dropdown-menu {
 
 main .container .parameters .dropdown .dropdown-menu[aria-expanded='true'] {
   visibility: visible;
+}
+
+@media (max-width: 1000px) {
+  main .container .parameters .dropdown .dropdown-menu {
+    width: 15rem;
+  }
 }
 
 main .container .parameters .dropdown .dropdown-menu li {
