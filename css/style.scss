@@ -90,6 +90,7 @@ main {
 
         @media(max-width: 1000px) {
           width: 100%;
+
         }
 
         label {
@@ -109,6 +110,7 @@ main {
 
           @media(max-width: 1000px) {
             width: 100%;
+            font-size: 0.8rem;
           }
 
           &::placeholder {
@@ -217,8 +219,22 @@ main {
       grid-row-gap: 70px;
       justify-content: space-between;
 
-      @media(max-width:1000px) {
-        grid-template-columns: 1fr;
+      @media(max-width: 1200px) {
+        justify-content: center;
+        grid-column-gap: 40px;
+        grid-template-columns: 16.5rem 16.5rem 16.5rem;
+      }
+
+      @media(max-width: 975px) {
+        justify-content: center;
+        grid-column-gap: 76px;
+        grid-template-columns: 16.5rem 16.5rem;
+      }
+
+
+      @media(max-width: 670px) {
+        justify-content: center;
+        grid-template-columns: 16.5rem;
       }
 
       .card {

@@ -129,6 +129,7 @@ main .container .parameters .search input {
 @media (max-width: 1000px) {
   main .container .parameters .search input {
     width: 100%;
+    font-size: 0.8rem;
   }
 }
 
@@ -266,10 +267,35 @@ main .container .countries {
           justify-content: space-between;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
   main .container .countries {
-    -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    grid-column-gap: 40px;
+    -ms-grid-columns: 16.5rem 16.5rem 16.5rem;
+        grid-template-columns: 16.5rem 16.5rem 16.5rem;
+  }
+}
+
+@media (max-width: 975px) {
+  main .container .countries {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    grid-column-gap: 76px;
+    -ms-grid-columns: 16.5rem 16.5rem;
+        grid-template-columns: 16.5rem 16.5rem;
+  }
+}
+
+@media (max-width: 670px) {
+  main .container .countries {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-grid-columns: 16.5rem;
+        grid-template-columns: 16.5rem;
   }
 }
 
