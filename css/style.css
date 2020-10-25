@@ -62,6 +62,7 @@ main .container {
   width: 1280px;
   max-width: 90%;
   margin: 0 auto;
+  padding-bottom: 5rem;
 }
 
 main .container .parameters {
@@ -177,9 +178,9 @@ main .container .parameters .dropdown .dropdown-toggle {
      -moz-appearance: none;
           appearance: none;
   height: 3.4rem;
-  width: 11rem;
+  width: 12.5rem;
   padding-right: 3.5rem;
-  padding-left: 1rem;
+  padding-left: 1.4rem;
   position: relative;
   cursor: pointer;
   overflow: hidden;
@@ -267,7 +268,7 @@ main .container .countries {
           justify-content: space-between;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1250px) {
   main .container .countries {
     -webkit-box-pack: center;
         -ms-flex-pack: center;

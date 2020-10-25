@@ -1,11 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&display=swap');
-
-$dark-blue: #2b3945; // Dark Mode Elements
-$very-dark-blue: #202c37; // Dark Mode Background
-$very-dark-blue: #111517; // Light Mode Text
-$dark-gray: #858585; // Light Mode Input
-$very-light-gray: #fafafa; // Light Mode Background
-$white: #ffffff; // Dark Mode Text & Light Mode Elements
+@import 'utilities.scss';
 
 * {
   margin: 0;
@@ -67,6 +61,7 @@ main {
     width: 1280px;
     max-width: 90%;
     margin: 0 auto;
+    padding-bottom: 5rem;
 
     .parameters {
       display: flex;
@@ -138,9 +133,9 @@ main {
           box-shadow: 0px 2px 5px 0px rgba(180, 180, 180, 0.4);
           appearance: none;
           height: 3.4rem;
-          width: 11rem;
+          width: 12.5rem;
           padding-right: 3.5rem;
-          padding-left: 1rem;
+          padding-left: 1.4rem;
           position: relative;
           cursor: pointer;
           overflow: hidden;
@@ -219,7 +214,7 @@ main {
       grid-row-gap: 70px;
       justify-content: space-between;
 
-      @media(max-width: 1200px) {
+      @media(max-width: 1250px) {
         justify-content: center;
         grid-column-gap: 40px;
         grid-template-columns: 16.5rem 16.5rem 16.5rem;
@@ -285,8 +280,6 @@ main {
           }
         }
       }
-
     }
-
   }
 }
