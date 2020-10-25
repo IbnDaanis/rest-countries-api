@@ -1,12 +1,11 @@
 const main = document.querySelector('main')
 const darkButton = document.querySelector('.dark-mode-btn')
 const darkButtonIcon = document.querySelector('.dark-mode-btn i')
-
 const countries = document.querySelector('.countries')
 const countryList = localStorage.getItem('countryList') ? JSON.parse(localStorage.getItem('countryList')) : []
 const searchInput = document.querySelector('#search')
 
-
+// Search country by name
 searchInput.addEventListener('keyup', e => {
   const input = searchInput.value.toLowerCase()
   countries.innerHTML = ''
@@ -17,6 +16,7 @@ function formatNumber(num) {
   return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
 }
 
+// Create country card
 const displayCountries = (theList = countryList) => {
   theList.forEach(country => {
     const card = document.createElement('div')
@@ -51,6 +51,7 @@ const displayCountries = (theList = countryList) => {
   })
 }
 
+// Fetch data from API
 const getCountries = async () => {
   try {
     if (!localStorage.getItem('countryList')) {
@@ -80,6 +81,7 @@ const getCountries = async () => {
 
 getCountries()
 
+// Filter by region
 function DropDown(dropDown) {
   const [toggler, menu] = dropDown.children
 
