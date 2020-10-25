@@ -9,8 +9,10 @@
 }
 
 body {
-  background: $very-light-gray;
+  background: $background;
 }
+
+
 
 main {
   .container {
@@ -32,7 +34,7 @@ main {
         width: fit-content;
         height: 3.4rem;
         border-radius: 5px;
-        background: $white;
+        background: $background;
         box-shadow: 0px 2px 5px 0px rgba(180, 180, 180, 0.4);
         display: flex;
         align-items: center;
@@ -56,6 +58,8 @@ main {
           height: 100%;
           outline: none;
           border-radius: 5px;
+          background: inherit;
+          color: inherit;
 
           @media(max-width: 1000px) {
             width: 100%;
@@ -63,7 +67,7 @@ main {
           }
 
           &::placeholder {
-            color: $dark-gray;
+            color: inherit;
             font-weight: 300;
           }
         }
@@ -123,11 +127,13 @@ main {
           top: calc(50% - 3px);
         }
 
+
+
         .dropdown-menu {
           position: absolute;
           width: 100%;
           transform: translateY(4px);
-          background: $white;
+          background: $background;
           padding-left: 1rem;
           font-weight: 300;
           font-size: 0.9rem;
@@ -157,7 +163,34 @@ main {
               background: rgb(214, 214, 214)
             }
           }
+
         }
+
+        .dark-element {
+
+          li {
+            &:hover {
+              background: rgb(38, 52, 64)
+            }
+
+            &:focus {
+              background: rgb(34, 48, 60)
+            }
+          }
+        }
+
+        .dark-element {
+          &::after {
+            border-top-color: white;
+          }
+        }
+
+        .dark-element.active::after {
+          border-color: transparent;
+          border-bottom-color: white;
+        }
+
+
       }
     }
 
@@ -188,10 +221,8 @@ main {
 
       .card {
         height: 340px;
-        border-radius: 5px;
-        -webkit-box-shadow: 0px 2px 5px 0px rgba(180, 180, 180, 0.4);
-        -moz-box-shadow: 0px 2px 5px 0px rgba(180, 180, 180, 0.4);
         box-shadow: 0px 2px 5px 0px rgba(180, 180, 180, 0.4);
+        background: none;
 
         .flag {
           border-radius: 5px 5px 0 0;
@@ -207,7 +238,7 @@ main {
         }
 
         .info {
-          background: white;
+          background: $background;
           height: 180px;
           border-radius: 0 0 5px 5px;
           padding: 1.5rem;

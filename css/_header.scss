@@ -1,7 +1,7 @@
 header {
   nav {
     box-shadow: 0px 2px 5px 0px rgba(180, 180, 180, 0.4);
-    background: $white;
+    background: $background;
     position: relative;
 
     .container {
@@ -27,6 +27,7 @@ header {
         cursor: pointer;
         font-weight: 600;
         font-size: 1rem;
+        box-shadow: none !important;
 
         i {
           margin-right: 8px;

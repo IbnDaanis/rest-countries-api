@@ -1,4 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&display=swap");
+.dark {
+  background: #202c37;
+  color: #ffffff;
+}
+
+.dark-element {
+  background: #2b3945 !important;
+  color: #ffffff !important;
+  -webkit-box-shadow: 0px 2px 5px 0px rgba(29, 29, 29, 0.4) !important;
+          box-shadow: 0px 2px 5px 0px rgba(29, 29, 29, 0.4) !important;
+}
+
 .container {
   width: 1280px;
   max-width: 90%;
@@ -8,7 +20,7 @@
 header nav {
   -webkit-box-shadow: 0px 2px 5px 0px rgba(180, 180, 180, 0.4);
           box-shadow: 0px 2px 5px 0px rgba(180, 180, 180, 0.4);
-  background: #ffffff;
+  background: #fafafa;
   position: relative;
 }
 
@@ -43,6 +55,8 @@ header nav .container .dark-mode-btn {
   cursor: pointer;
   font-weight: 600;
   font-size: 1rem;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
 }
 
 header nav .container .dark-mode-btn i {
@@ -94,7 +108,7 @@ main .container .parameters .search {
   width: fit-content;
   height: 3.4rem;
   border-radius: 5px;
-  background: #ffffff;
+  background: #fafafa;
   -webkit-box-shadow: 0px 2px 5px 0px rgba(180, 180, 180, 0.4);
           box-shadow: 0px 2px 5px 0px rgba(180, 180, 180, 0.4);
   display: -webkit-box;
@@ -125,6 +139,8 @@ main .container .parameters .search input {
   height: 100%;
   outline: none;
   border-radius: 5px;
+  background: inherit;
+  color: inherit;
 }
 
 @media (max-width: 1000px) {
@@ -135,22 +151,22 @@ main .container .parameters .search input {
 }
 
 main .container .parameters .search input::-webkit-input-placeholder {
-  color: #858585;
+  color: inherit;
   font-weight: 300;
 }
 
 main .container .parameters .search input:-ms-input-placeholder {
-  color: #858585;
+  color: inherit;
   font-weight: 300;
 }
 
 main .container .parameters .search input::-ms-input-placeholder {
-  color: #858585;
+  color: inherit;
   font-weight: 300;
 }
 
 main .container .parameters .search input::placeholder {
-  color: #858585;
+  color: inherit;
   font-weight: 300;
 }
 
@@ -222,7 +238,7 @@ main .container .parameters .dropdown .dropdown-menu {
   width: 100%;
   -webkit-transform: translateY(4px);
           transform: translateY(4px);
-  background: #ffffff;
+  background: #fafafa;
   padding-left: 1rem;
   font-weight: 300;
   font-size: 0.9rem;
@@ -255,6 +271,23 @@ main .container .parameters .dropdown .dropdown-menu li:hover {
 
 main .container .parameters .dropdown .dropdown-menu li:focus {
   background: #d6d6d6;
+}
+
+main .container .parameters .dropdown .dark-element li:hover {
+  background: #263440;
+}
+
+main .container .parameters .dropdown .dark-element li:focus {
+  background: #22303c;
+}
+
+main .container .parameters .dropdown .dark-element::after {
+  border-top-color: white;
+}
+
+main .container .parameters .dropdown .dark-element.active::after {
+  border-color: transparent;
+  border-bottom-color: white;
 }
 
 main .container .countries {
@@ -302,9 +335,9 @@ main .container .countries {
 
 main .container .countries .card {
   height: 340px;
-  border-radius: 5px;
   -webkit-box-shadow: 0px 2px 5px 0px rgba(180, 180, 180, 0.4);
-  box-shadow: 0px 2px 5px 0px rgba(180, 180, 180, 0.4);
+          box-shadow: 0px 2px 5px 0px rgba(180, 180, 180, 0.4);
+  background: none;
 }
 
 main .container .countries .card .flag {
@@ -322,7 +355,7 @@ main .container .countries .card .flag img {
 }
 
 main .container .countries .card .info {
-  background: white;
+  background: #fafafa;
   height: 180px;
   border-radius: 0 0 5px 5px;
   padding: 1.5rem;

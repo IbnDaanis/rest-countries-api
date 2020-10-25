@@ -1,11 +1,6 @@
 const main = document.querySelector('main')
 const darkButton = document.querySelector('.dark-mode-btn')
 const darkButtonIcon = document.querySelector('.dark-mode-btn i')
-darkButton.addEventListener('click', e => {
-  darkButtonIcon.classList.toggle('fas')
-})
-
-
 
 const countries = document.querySelector('.countries')
 const countryList = localStorage.getItem('countryList') ? JSON.parse(localStorage.getItem('countryList')) : []
@@ -170,3 +165,29 @@ dropDown.element.addEventListener('change', () => {
   dropDown.value === 'All' ? displayCountries() : displayCountries(countryList.filter(e => e.region === dropDown.value))
 })
 dropDown.toggle()
+
+
+// Dark Mode
+
+const nav = document.querySelector('nav')
+const cardEl = document.querySelectorAll('.card')
+const infoEl = document.querySelectorAll('.card .info')
+const dropDownMenu = document.querySelector('.dropdown-toggle')
+const dropDownMenuOptions = document.querySelector('.dropdown-menu')
+const search = document.querySelector('.search')
+const searchIcon = document.querySelector('label i')
+darkButton.addEventListener('click', e => {
+  darkButton.classList.toggle('dark-element')
+  darkButtonIcon.classList.toggle('dark-element')
+  darkButtonIcon.classList.toggle('fas')
+  document.body.classList.toggle('dark')
+  nav.classList.toggle('dark-element')
+  cardEl.forEach(e => e.classList.toggle('dark-element'))
+  infoEl.forEach(e => e.classList.toggle('dark-element'))
+  dropDownMenu.classList.toggle('dark-element')
+  dropDownMenuOptions.classList.toggle('dark-element')
+  search.classList.toggle('dark-element')
+  searchIcon.classList.toggle('dark-element')
+})
+
+

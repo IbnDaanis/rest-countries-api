@@ -1,9 +1,23 @@
-$dark-blue: #2b3945; // Dark Mode Elements
-$very-dark-blue: #202c37; // Dark Mode Background
-$very-dark-blue: #111517; // Light Mode Text
+$text: #111517; // Light Mode Text
 $dark-gray: #858585; // Light Mode Input
-$very-light-gray: #fafafa; // Light Mode Background
-$white: #ffffff; // Dark Mode Text & Light Mode Elements
+$background: #fafafa; // Light Mode Background
+$elements: #ffffff; //Light Mode Elements
+
+.dark {
+  $background: #202c37; // Dark Mode Background
+  background: $background;
+
+  $text: #ffffff; // Dark Mode Text 
+  color: $text;
+}
+
+.dark-element {
+  $elements: #2b3945; // Dark Mode Elements
+  background: $elements !important;
+  $text: #ffffff; // Dark Mode Text 
+  color: $text !important;
+  box-shadow: 0px 2px 5px 0px rgba(29, 29, 29, 0.4) !important;
+}
 
 .container {
   width: 1280px;
