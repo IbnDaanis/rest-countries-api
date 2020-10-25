@@ -6,10 +6,18 @@ darkButton.addEventListener('click', e => {
 })
 const countries = document.querySelector('.countries')
 const countryList = localStorage.getItem('countryList') ? JSON.parse(localStorage.getItem('countryList')) : []
+const searchInput = document.querySelector('#search')
+
+searchInput.addEventListener('keyup', e => {
+  const input = searchInput.value.toLowerCase()
+  countries.innerHTML = ''
+  displayCountries(countryList.filter(e => e.name.toLowerCase().includes(searchInput.value.toLowerCase())))
+})
 
 
-function displayCountries() {
-  countryList.forEach(country => {
+
+const displayCountries = (theList = countryList) => {
+  theList.forEach(country => {
     const card = document.createElement('div')
     card.classList.add('card')
     const flag = document.createElement('div')
@@ -57,7 +65,7 @@ const getCountries = async () => {
           capital: country.capital
         })
       })
-      // localStorage.setItem('countryList', JSON.stringify(countryList))
+      localStorage.setItem('countryList', JSON.stringify(countryList))
       console.log(countryList)
       displayCountries()
     } else {

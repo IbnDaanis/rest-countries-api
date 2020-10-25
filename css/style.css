@@ -58,7 +58,7 @@ main .container {
   margin: 0 auto;
 }
 
-main .container .search {
+main .container .parameters .search {
   margin-top: 3rem;
   margin-bottom: 3.1rem;
   width: -webkit-fit-content;
@@ -77,37 +77,37 @@ main .container .search {
           align-items: center;
 }
 
-main .container .search label {
+main .container .parameters .search label {
   margin: 0 24px;
 }
 
-main .container .search label i {
+main .container .parameters .search label i {
   color: #858585;
 }
 
-main .container .search input {
+main .container .parameters .search input {
   border: none;
   width: 420px;
   height: 100%;
   outline: none;
 }
 
-main .container .search input::-webkit-input-placeholder {
+main .container .parameters .search input::-webkit-input-placeholder {
   color: #858585;
   font-weight: 300;
 }
 
-main .container .search input:-ms-input-placeholder {
+main .container .parameters .search input:-ms-input-placeholder {
   color: #858585;
   font-weight: 300;
 }
 
-main .container .search input::-ms-input-placeholder {
+main .container .parameters .search input::-ms-input-placeholder {
   color: #858585;
   font-weight: 300;
 }
 
-main .container .search input::placeholder {
+main .container .parameters .search input::placeholder {
   color: #858585;
   font-weight: 300;
 }

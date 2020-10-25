@@ -64,41 +64,42 @@ main {
     max-width: 90%;
     margin: 0 auto;
 
-    .search {
-      margin-top: 3rem;
-      margin-bottom: 3.1rem;
-      width: fit-content;
-      height: 3.4rem;
-      border-radius: 10px;
-      background: $white;
-      -webkit-box-shadow: 0px 2px 5px 0px rgba(180, 180, 180, 0.4);
-      -moz-box-shadow: 0px 2px 5px 0px rgba(180, 180, 180, 0.4);
-      box-shadow: 0px 2px 5px 0px rgba(180, 180, 180, 0.4);
-      display: flex;
-      align-items: center;
+    .parameters {
+      .search {
+        margin-top: 3rem;
+        margin-bottom: 3.1rem;
+        width: fit-content;
+        height: 3.4rem;
+        border-radius: 10px;
+        background: $white;
+        -webkit-box-shadow: 0px 2px 5px 0px rgba(180, 180, 180, 0.4);
+        -moz-box-shadow: 0px 2px 5px 0px rgba(180, 180, 180, 0.4);
+        box-shadow: 0px 2px 5px 0px rgba(180, 180, 180, 0.4);
+        display: flex;
+        align-items: center;
 
-      label {
-        i {
-          color: $dark-gray;
+        label {
+          i {
+            color: $dark-gray;
+          }
+
+          margin: 0 24px;
         }
 
-        margin: 0 24px;
-      }
+        input {
+          border: none;
+          width: 420px;
+          height: 100%;
+          outline: none;
 
-      input {
-        border: none;
-        width: 420px;
-        height: 100%;
-        outline: none;
-
-
-        &::placeholder {
-          color: $dark-gray;
-          font-weight: 300;
+          &::placeholder {
+            color: $dark-gray;
+            font-weight: 300;
+          }
         }
-
-        &:active {}
       }
+
+      .filter {}
     }
 
     .countries {
