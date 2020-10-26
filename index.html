@@ -28,7 +28,7 @@
       </nav>
     </header>
     <main>
-      <div class="container">
+      <div class="container" id="container">
         <div class="parameters">
           <div class="search">
             <label for="search">
@@ -54,8 +54,62 @@
             </ul>
           </div>
         </div>
-        <div class="countries">
-          <!-- Cards inserted here by Fetch API -->
+        <div class="countries" hidden></div>
+
+        <div class="modal invisible">
+          <div class="back">
+            <button class="back-button" onclick="hide()">
+              <i class="fas fa-arrow-left"></i>Back
+            </button>
+          </div>
+          <div class="information">
+            <div class="flag">
+              <img src="" alt="Flag" class="countryFlag" />
+            </div>
+            <div class="information-section">
+              <h2 class="countryName"></h2>
+              <div class="facts">
+                <ul class="one">
+                  <li>
+                    <span>Native Name: </span
+                    ><span class="countryNativeName"></span>
+                  </li>
+                  <li>
+                    <span>Population: </span
+                    ><span class="countryPopulation"></span>
+                  </li>
+                  <li>
+                    <span>Region: </span><span class="countryRegion"></span>
+                  </li>
+                  <li>
+                    <span>Sub Region: </span
+                    ><span class="countrySubRegion"></span>
+                  </li>
+                  <li>
+                    <span>Capital: </span><span class="countryCapital"></span>
+                  </li>
+                </ul>
+                <ul class="two">
+                  <li>
+                    <span>Top Level Domain: </span
+                    ><span class="countryTopLevelDomain"></span>
+                  </li>
+                  <li>
+                    <span>Currencies: </span
+                    ><span class="countryCurrencies"></span>
+                  </li>
+                  <li>
+                    <span>Languages: </span
+                    ><span class="countryLanguages"></span>
+                  </li>
+                </ul>
+              </div>
+              <div class="borders">
+                <h3>Border Countries:</h3>
+                <ul class="countryBordersList"></ul>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </main>

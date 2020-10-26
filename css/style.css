@@ -17,6 +17,10 @@
   margin: 0 auto;
 }
 
+li {
+  list-style: none;
+}
+
 header nav {
   -webkit-box-shadow: 0px 2px 5px 0px rgba(180, 180, 180, 0.4);
           box-shadow: 0px 2px 5px 0px rgba(180, 180, 180, 0.4);
@@ -61,6 +65,222 @@ header nav .container .dark-mode-btn {
 
 header nav .container .dark-mode-btn i {
   margin-right: 9px;
+}
+
+.modal .back {
+  margin: 5rem 0;
+}
+
+.modal .back-button {
+  background: #fafafa;
+  font-weight: 300;
+  font-size: 1rem;
+  -webkit-box-shadow: 0px 2px 5px 0px rgba(180, 180, 180, 0.4);
+          box-shadow: 0px 2px 5px 0px rgba(180, 180, 180, 0.4);
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  height: 2.8rem;
+  width: 150px;
+  color: #111517;
+  text-align: left;
+}
+
+.modal .back-button i {
+  margin-right: 1rem;
+  margin-left: 2rem;
+  color: #858585;
+}
+
+.modal .information {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+@media (max-width: 1100px) {
+  .modal .information {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+.modal .information .flag {
+  width: 45%;
+}
+
+@media (max-width: 1100px) {
+  .modal .information .flag {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+.modal .information .flag img {
+  width: 100%;
+  height: auto;
+}
+
+.modal .information-section {
+  width: 45%;
+}
+
+@media (max-width: 1100px) {
+  .modal .information-section {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+.modal .information-section h2 {
+  margin: 2rem 0 1.5rem;
+}
+
+.modal .information-section .facts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 3rem;
+}
+
+@media (max-width: 1100px) {
+  .modal .information-section .facts {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+    margin: 0 auto 3rem;
+  }
+}
+
+@media (max-width: 1100px) {
+  .modal .information-section .facts .one {
+    margin-bottom: 2rem;
+  }
+}
+
+.modal .information-section .facts .one li {
+  font-weight: 300;
+  margin-bottom: .3rem;
+}
+
+@media (max-width: 1100px) {
+  .modal .information-section .facts .one li {
+    margin-bottom: 1rem;
+  }
+}
+
+.modal .information-section .facts .one li span {
+  font-weight: 400;
+}
+
+.modal .information-section .facts .two li {
+  font-weight: 300;
+  margin-bottom: .3rem;
+}
+
+@media (max-width: 1100px) {
+  .modal .information-section .facts .two li {
+    margin-bottom: 1rem;
+  }
+}
+
+.modal .information-section .facts .two li span {
+  font-weight: 400;
+}
+
+.modal .information-section .borders {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media (max-width: 1100px) {
+  .modal .information-section .borders {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+}
+
+.modal .information-section .borders h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-right: 10px;
+}
+
+@media (max-width: 1100px) {
+  .modal .information-section .borders h3 {
+    margin-bottom: 1rem;
+  }
+}
+
+.modal .information-section .borders .countryBordersList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+@media (max-width: 1100px) {
+  .modal .information-section .borders .countryBordersList {
+    width: 400px;
+  }
+}
+
+.modal .information-section .borders .countryBordersList li {
+  display: -ms-grid;
+  display: grid;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  background: #fafafa;
+  font-weight: 300;
+  font-size: 1rem;
+  -webkit-box-shadow: 0px 2px 5px 0px rgba(83, 83, 83, 0.4);
+          box-shadow: 0px 2px 5px 0px rgba(83, 83, 83, 0.4);
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  height: 2rem;
+  color: #111517;
+  padding: 0 1.5rem;
+  margin: 0 0 5px 10px;
+  text-align: center;
+}
+
+@media (max-width: 1100px) {
+  .modal .information-section .borders .countryBordersList li {
+    margin: 0 10px 10px 0;
+  }
 }
 
 * {
@@ -386,5 +606,9 @@ main .container .countries .card .info .facts li {
 
 main .container .countries .card .info .facts li span {
   font-weight: 600;
+}
+
+.invisible {
+  display: none !important;
 }
 /*# sourceMappingURL=style.css.map */
