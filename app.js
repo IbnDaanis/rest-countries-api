@@ -64,11 +64,7 @@ const displayModal = (country) => {
     bordering.textContent = border
     countryBordersList.appendChild(bordering)
   })
-
-
 }
-
-
 
 // Create country card
 const displayCountries = (theList = countryList) => {
@@ -81,6 +77,7 @@ const displayCountries = (theList = countryList) => {
     const flagImage = document.createElement('img')
     flag.appendChild(flagImage)
     flagImage.src = country.flag
+    flagImage.alt = `Flag of ${country.name}`
     const info = document.createElement('div')
     card.appendChild(info)
     info.classList.add('info')
@@ -124,7 +121,7 @@ const getCountries = async () => {
     if (!localStorage.getItem('countryList')) {
       const fetchAPI = await fetch('https://restcountries.eu/rest/v2/all')
       const data = await fetchAPI.json()
-      console.log(data)
+      // console.log(data)
       data.forEach((country) => {
         countryList.push({
           flag: country.flag,
@@ -143,7 +140,7 @@ const getCountries = async () => {
         })
       })
       localStorage.setItem('countryList', JSON.stringify(countryList))
-      console.log(countryList)
+      // console.log(countryList)
       displayCountries()
     } else {
       displayCountries()
