@@ -18,6 +18,9 @@ searchInput.addEventListener('keyup', (e) => {
     )
   )
 })
+let darkMode = localStorage.getItem('darkMode')
+  ? JSON.parse(localStorage.getItem('darkMode'))
+  : false
 
 function formatNumber(num) {
   return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
@@ -61,6 +64,7 @@ const displayModal = (country) => {
   country.borderCountries.forEach(border => {
     const bordering = document.createElement('li')
     bordering.classList.add('borderingCountry')
+    darkMode && bordering.classList.add('dark-element')
     bordering.textContent = border
     countryBordersList.appendChild(bordering)
   })
@@ -253,7 +257,9 @@ const dropDownMenu = document.querySelector('.dropdown-toggle')
 const dropDownMenuOptions = document.querySelector('.dropdown-menu')
 const search = document.querySelector('.search')
 const searchIcon = document.querySelector('label i')
-darkButton.addEventListener('click', (e) => {
+
+const toggleDarkMode = () => {
+  localStorage.setItem('darkMode', JSON.stringify(darkMode))
   backButton.classList.toggle('dark-element')
   darkButton.classList.toggle('dark-element')
   darkButtonIcon.classList.toggle('dark-element')
@@ -267,4 +273,12 @@ darkButton.addEventListener('click', (e) => {
   dropDownMenuOptions.classList.toggle('dark-element')
   search.classList.toggle('dark-element')
   searchIcon.classList.toggle('dark-element')
+}
+
+darkMode && toggleDarkMode()
+
+darkButton.addEventListener('click', (e) => {
+  darkMode = !darkMode
+  toggleDarkMode()
 })
+
