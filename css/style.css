@@ -21,6 +21,10 @@ li {
   list-style: none;
 }
 
+.invisible {
+  display: none !important;
+}
+
 header nav {
   -webkit-box-shadow: 0px 2px 5px 0px rgba(180, 180, 180, 0.4);
           box-shadow: 0px 2px 5px 0px rgba(180, 180, 180, 0.4);
@@ -607,9 +611,5 @@ main .container .countries .card .info .facts li {
 
 main .container .countries .card .info .facts li span {
   font-weight: 600;
-}
-
-.invisible {
-  display: none !important;
 }
 /*# sourceMappingURL=style.css.map */
