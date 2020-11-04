@@ -299,6 +299,7 @@ header nav .container .dark-mode-btn i {
 
 body {
   background: #fafafa;
+  overflow-x: hidden;
 }
 
 main .container {
