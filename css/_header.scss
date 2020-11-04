@@ -12,7 +12,8 @@ header {
       z-index: 100;
 
       h1 {
-        font-weight: 700;
+        font-weight: 600;
+        letter-spacing: 1px;
 
         @media(max-width: 1000px) {
           font-size: 1.2rem;

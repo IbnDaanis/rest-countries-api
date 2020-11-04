@@ -7,8 +7,8 @@
 .dark-element {
   background: #2b3945 !important;
   color: #ffffff !important;
-  -webkit-box-shadow: 0px 2px 5px 0px rgba(29, 29, 29, 0.4) !important;
-          box-shadow: 0px 2px 5px 0px rgba(29, 29, 29, 0.4) !important;
+  -webkit-box-shadow: 0px 2px 5px 0px rgba(30, 30, 30, 0.1) !important;
+          box-shadow: 0px 2px 5px 0px rgba(30, 30, 30, 0.1) !important;
 }
 
 .container {
@@ -47,7 +47,8 @@ header nav .container {
 }
 
 header nav .container h1 {
-  font-weight: 700;
+  font-weight: 600;
+  letter-spacing: 1px;
 }
 
 @media (max-width: 1000px) {
