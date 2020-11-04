@@ -14,15 +14,13 @@ searchInput.addEventListener('keyup', (e) => {
   countries.innerHTML = ''
   displayCountries(
     countryList.filter((e) =>
-      e.name.toLowerCase().includes(searchInput.value.toLowerCase())
+      e.name.toLowerCase().includes(input)
     )
   )
 })
-let darkMode = localStorage.getItem('darkMode')
-  ? JSON.parse(localStorage.getItem('darkMode'))
-  : false
 
-function formatNumber(num) {
+
+function formatNumberAddCommas(num) {
   return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
 }
 
@@ -54,7 +52,7 @@ const displayModal = (country) => {
   countryFlag.src = country.flag
   countryName.textContent = country.name
   countryNativeName.textContent = country.nativeName
-  countryPopulation.textContent = formatNumber(country.population)
+  countryPopulation.textContent = formatNumberAddCommas(country.population)
   countryRegion.textContent = country.region
   countrySubRegion.textContent = country.subregion
   countryCapital.textContent = country.capital
@@ -69,6 +67,14 @@ const displayModal = (country) => {
     countryBordersList.appendChild(bordering)
   })
 }
+
+let nav
+let cardEl
+let infoEl
+let dropDownMenu
+let dropDownMenuOptions
+let search
+let searchIcon
 
 // Create country card
 const displayCountries = (theList = countryList) => {
@@ -97,7 +103,7 @@ const displayCountries = (theList = countryList) => {
     facts.classList.add('facts')
     const population = document.createElement('li')
     facts.appendChild(population)
-    population.innerHTML = `<span>Population: </span>${formatNumber(
+    population.innerHTML = `<span>Population: </span>${formatNumberAddCommas(
       country.population
     )}`
     const region = document.createElement('li')
@@ -116,6 +122,15 @@ const displayCountries = (theList = countryList) => {
 
     })
     countries.appendChild(card)
+
+
+    nav = document.querySelector('nav')
+    cardEl = document.querySelectorAll('.card')
+    infoEl = document.querySelectorAll('.card .info')
+    dropDownMenu = document.querySelector('.dropdown-toggle')
+    dropDownMenuOptions = document.querySelector('.dropdown-menu')
+    search = document.querySelector('.search')
+    searchIcon = document.querySelector('label i')
   })
 }
 
@@ -249,22 +264,20 @@ dropDown.element.addEventListener('change', () => {
 })
 dropDown.toggle()
 
+
+
 // Dark Mode
-const nav = document.querySelector('nav')
-const cardEl = document.querySelectorAll('.card')
-const infoEl = document.querySelectorAll('.card .info')
-const dropDownMenu = document.querySelector('.dropdown-toggle')
-const dropDownMenuOptions = document.querySelector('.dropdown-menu')
-const search = document.querySelector('.search')
-const searchIcon = document.querySelector('label i')
+
+let darkMode = localStorage.getItem('darkMode')
+  ? JSON.parse(localStorage.getItem('darkMode'))
+  : false
 
 const toggleDarkMode = () => {
-  localStorage.setItem('darkMode', JSON.stringify(darkMode))
+  document.body.classList.toggle('dark')
   backButton.classList.toggle('dark-element')
   darkButton.classList.toggle('dark-element')
   darkButtonIcon.classList.toggle('dark-element')
   darkButtonIcon.classList.toggle('fas')
-  document.body.classList.toggle('dark')
   nav.classList.toggle('dark-element')
   cardEl.forEach((e) => e.classList.toggle('dark-element'))
   infoEl.forEach((e) => e.classList.toggle('dark-element'))
@@ -273,12 +286,13 @@ const toggleDarkMode = () => {
   dropDownMenuOptions.classList.toggle('dark-element')
   search.classList.toggle('dark-element')
   searchIcon.classList.toggle('dark-element')
+  localStorage.setItem('darkMode', JSON.stringify(darkMode))
 }
-
-darkMode && toggleDarkMode()
 
 darkButton.addEventListener('click', (e) => {
   darkMode = !darkMode
   toggleDarkMode()
 })
+
+darkMode && toggleDarkMode()
 
