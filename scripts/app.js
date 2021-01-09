@@ -8,17 +8,15 @@ const countryList = localStorage.getItem('countryList')
   : []
 const searchInput = document.querySelector('#search')
 const container = document.querySelector('#container')
+
 // Search country by name
-searchInput.addEventListener('keyup', (e) => {
+searchInput.addEventListener('keyup', e => {
   const input = searchInput.value.toLowerCase()
   countries.innerHTML = ''
   displayCountries(
-    countryList.filter((e) =>
-      e.name.toLowerCase().includes(input)
-    )
+    countryList.filter(e => e.name.toLowerCase().includes(input))
   )
 })
-
 
 function formatNumberAddCommas(num) {
   return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
@@ -46,8 +44,7 @@ const countryLanguages = document.querySelector('.countryLanguages')
 const countryBordersList = document.querySelector('.countryBordersList')
 const backButton = document.querySelector('.back-button')
 
-
-const displayModal = (country) => {
+const displayModal = country => {
   modal.classList.toggle('invisible')
   countryFlag.src = country.flag
   countryName.textContent = country.name
@@ -78,7 +75,7 @@ let searchIcon
 
 // Create country card
 const displayCountries = (theList = countryList) => {
-  theList.forEach((country) => {
+  theList.forEach(country => {
     const card = document.createElement('div')
     card.classList.add('card')
     const flag = document.createElement('div')
@@ -119,10 +116,8 @@ const displayCountries = (theList = countryList) => {
       countries.classList.toggle('invisible')
       parameters.classList.toggle('invisible')
       displayModal(country)
-
     })
     countries.appendChild(card)
-
 
     nav = document.querySelector('nav')
     cardEl = document.querySelectorAll('.card')
@@ -140,8 +135,7 @@ const getCountries = async () => {
     if (!localStorage.getItem('countryList')) {
       const fetchAPI = await fetch('https://restcountries.eu/rest/v2/all')
       const data = await fetchAPI.json()
-      // console.log(data)
-      data.forEach((country) => {
+      data.forEach(country => {
         countryList.push({
           flag: country.flag,
           name: country.name,
@@ -155,11 +149,10 @@ const getCountries = async () => {
           topLevelDomain: country.topLevelDomain,
           currencies: country.currencies,
           languages: country.languages,
-          borderCountries: country.borders
+          borderCountries: country.borders,
         })
       })
       localStorage.setItem('countryList', JSON.stringify(countryList))
-      // console.log(countryList)
       displayCountries()
     } else {
       displayCountries()
@@ -175,7 +168,7 @@ getCountries()
 function DropDown(dropDown) {
   const [toggler, menu] = dropDown.children
 
-  const handleClickOut = (e) => {
+  const handleClickOut = e => {
     if (!dropDown) {
       return document.removeEventListener('click', handleClickOut)
     }
@@ -185,7 +178,7 @@ function DropDown(dropDown) {
     }
   }
 
-  const setValue = (item) => {
+  const setValue = item => {
     const val = item.textContent
     toggler.textContent = val
     this.value = val
@@ -194,7 +187,7 @@ function DropDown(dropDown) {
     toggler.focus()
   }
 
-  const handleItemKeyDown = (e) => {
+  const handleItemKeyDown = e => {
     e.preventDefault()
 
     if (e.keyCode === 38 && e.target.previousElementSibling) {
@@ -212,7 +205,7 @@ function DropDown(dropDown) {
     }
   }
 
-  const handleToggleKeyPress = (e) => {
+  const handleToggleKeyPress = e => {
     e.preventDefault()
 
     if (e.keyCode === 27) {
@@ -226,10 +219,10 @@ function DropDown(dropDown) {
 
   toggler.addEventListener('keydown', handleToggleKeyPress)
   toggler.addEventListener('click', () => this.toggle())
-    ;[...menu.children].forEach((item) => {
-      item.addEventListener('keydown', handleItemKeyDown)
-      item.addEventListener('click', () => setValue(item))
-    })
+  ;[...menu.children].forEach(item => {
+    item.addEventListener('keydown', handleItemKeyDown)
+    item.addEventListener('click', () => setValue(item))
+  })
 
   this.element = dropDown
 
@@ -260,11 +253,9 @@ dropDown.element.addEventListener('change', () => {
   countries.innerHTML = ''
   dropDown.value === 'All'
     ? displayCountries()
-    : displayCountries(countryList.filter((e) => e.region === dropDown.value))
+    : displayCountries(countryList.filter(e => e.region === dropDown.value))
 })
 dropDown.toggle()
-
-
 
 // Dark Mode
 
@@ -279,9 +270,12 @@ const toggleDarkMode = () => {
   darkButtonIcon.classList.toggle('dark-element')
   darkButtonIcon.classList.toggle('fas')
   nav.classList.toggle('dark-element')
-  cardEl.forEach((e) => e.classList.toggle('dark-element'))
-  infoEl.forEach((e) => e.classList.toggle('dark-element'))
-  document.querySelectorAll('.countryBordersList li') && document.querySelectorAll('.countryBordersList li').forEach(e => e.classList.toggle('dark-element'))
+  cardEl.forEach(e => e.classList.toggle('dark-element'))
+  infoEl.forEach(e => e.classList.toggle('dark-element'))
+  document.querySelectorAll('.countryBordersList li') &&
+    document
+      .querySelectorAll('.countryBordersList li')
+      .forEach(e => e.classList.toggle('dark-element'))
   dropDownMenu.classList.toggle('dark-element')
   dropDownMenuOptions.classList.toggle('dark-element')
   search.classList.toggle('dark-element')
@@ -289,10 +283,9 @@ const toggleDarkMode = () => {
   localStorage.setItem('darkMode', JSON.stringify(darkMode))
 }
 
-darkButton.addEventListener('click', (e) => {
+darkButton.addEventListener('click', e => {
   darkMode = !darkMode
   toggleDarkMode()
 })
 
 darkMode && toggleDarkMode()
-
